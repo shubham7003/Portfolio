@@ -158,7 +158,7 @@ export function HeroSection() {
             </motion.div>
 
             <GlitchText text="> SHUBHAM_DUBEY" />
-            <GlitchText text="// APP_DEVELOPER" delay={0.3} />
+            <GlitchText text="// FULLSTACK_ENGINEER" delay={0.3} />
           </div>
 
           <motion.p
@@ -167,8 +167,8 @@ export function HeroSection() {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.8 }}
           >
-            <span className="text-[#bd00ff]">App Developer</span> &{" "}
-            <span className="text-[#00f7ff]">AI/ML Enthusiast</span>.
+            
+            <span className="text-[#00f7ff]">Security Researcher</span>.
             <br />
             A passionate developer from India, currently student in Lovely Professional University.
           </motion.p>
