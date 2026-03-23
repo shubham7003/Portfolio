@@ -219,7 +219,7 @@ export function TestimonialsSection() {
                   </span>
                   <span className={`text-xs font-mono px-2 py-1 ${
                     isDecrypted 
-                      ? "text-[#d946ef] bg-[#d946ef]/10" 
+                      ? "text-[#ff9900] bg-[#ff9900]/10" 
                       : "text-[#ff0055] bg-[#ff0055]/10 animate-pulse"
                   }`}>
                     {isDecrypted ? "[DECRYPTED]" : "[CLICK TO DECRYPT]"}

@@ -21,7 +21,7 @@ export function HeroSection() {
             transition={{ delay: 0.4 }}
             className="inline-block px-3 py-1 bg-neon-green/10 text-neon-green text-xs font-bold tracking-wider rounded-sm uppercase"
           >
-            Front-End Developer
+            Full Stack Developer
           </motion.div>
 
           <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-[5rem] font-mono font-bold leading-[1.1] tracking-tight text-foreground">
@@ -103,19 +103,19 @@ export function HeroSection() {
           <div className="relative z-10 w-full h-full max-w-lg lg:max-w-xl mx-auto lg:mr-0 xl:-mr-12 pointer-events-none flex items-center justify-center">
             <div className="relative w-[330px] h-[330px] lg:w-[500px] lg:h-[500px]">
               {/* Unified single outer glowing circle */}
-              <div className="absolute inset-0 rounded-full overflow-hidden border-2 border-[#d946ef]/65 shadow-[0_0_95px_rgba(217,70,239,0.5)] bg-[#181a1f] group isolate">
+              <div className="absolute inset-0 rounded-full overflow-hidden border-2 border-[#ff9900]/65 shadow-[0_0_95px_rgba(255,153,0,0.5)] bg-[#181a1f] group isolate">
                 {/* Portrait expanded to fill outer circle */}
                 <img
                   src="/images/profile.png"
                   alt="Developer"
-                  className="w-full h-full object-cover object-[center_38%] scale-[1.5] transition-transform duration-700 group-hover:scale-[1.55] brightness-[1.05] saturate-[1.05]"
+                  className="w-full h-full object-cover object-center scale-100 transition-transform duration-700 group-hover:scale-105 brightness-[1.05] saturate-[1.05]"
                 />
 
                 {/* Subtle vignette to transition to the border */}
-                <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_75%,rgba(217,70,239,0.1)_90%,rgba(24,26,31,0.5)_100%)] z-10" />
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_75%,rgba(255,153,0,0.1)_90%,rgba(24,26,31,0.5)_100%)] z-10" />
 
-                {/* Purple key-light integration */}
-                <div className="absolute inset-0 bg-[linear-gradient(125deg,rgba(217,70,239,0)_30%,rgba(217,70,239,0.15)_100%)] mix-blend-overlay z-20" />
+                {/* Orange key-light integration */}
+                <div className="absolute inset-0 bg-[linear-gradient(125deg,rgba(255,153,0,0)_30%,rgba(255,153,0,0.15)_100%)] mix-blend-overlay z-20" />
               </div>
 
               {/* Re-placed icon bubbles inside the glowing perimeter */}
@@ -126,7 +126,7 @@ export function HeroSection() {
               />
               <FloatingIcon
                 delay={0.8}
-                className="bottom-[7%] right-[6%] p-4 bg-[#2b1436]/70 text-[#d946ef] border-[#d946ef]/35"
+                className="bottom-[7%] right-[6%] p-4 bg-[#331a00]/70 text-[#ff9900] border-[#ff9900]/35"
                 icon={<Terminal className="w-10 h-10" />}
               />
             </div>

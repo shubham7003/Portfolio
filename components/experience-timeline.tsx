@@ -147,7 +147,7 @@ export function ExperienceTimeline() {
       <div className="max-w-4xl mx-auto relative">
         {/* Central line with data stream */}
         <div className="absolute left-1/2 top-0 bottom-0 w-px -translate-x-1/2">
-          <div className="absolute inset-0 bg-gradient-to-b from-neon-green via-neon-green to-[#d946ef]" />
+          <div className="absolute inset-0 bg-gradient-to-b from-neon-green via-neon-green to-[#ff9900]" />
           <DataStream active={hoveredId !== null} />
         </div>
 
@@ -172,7 +172,7 @@ export function ExperienceTimeline() {
                     isHovered 
                       ? "border-[#00f7ff] bg-[#00f7ff] scale-150 shadow-[0_0_20px_#00f7ff]" 
                       : exp.status === "ACTIVE"
-                        ? "border-[#d946ef] bg-[#d946ef]/20 animate-pulse"
+                        ? "border-[#ff9900] bg-[#ff9900]/20 animate-pulse"
                         : "border-neon-green bg-neon-green/20"
                   }`}
                 >
@@ -209,7 +209,7 @@ export function ExperienceTimeline() {
                     {/* Status indicator */}
                     <div className={`absolute top-4 ${isLeft ? "right-8" : "left-8"}`}>
                       <span className={`text-xs font-mono ${
-                        exp.status === "ACTIVE" ? "text-[#d946ef]" : 
+                        exp.status === "ACTIVE" ? "text-[#ff9900]" : 
                         exp.status === "CLASSIFIED" ? "text-[#ff0055]" : "text-[#888]"
                       }`}>
                         [{exp.status}]

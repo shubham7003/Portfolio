@@ -41,7 +41,7 @@ export function ProjectsSection() {
   return (
     <section id="projects" className="relative py-20 md:py-32">
       {/* Background accents */}
-      <div className="absolute left-0 top-0 w-full h-px bg-gradient-to-r from-transparent via-[#bd00ff]/50 to-transparent" />
+      <div className="absolute left-0 top-0 w-full h-px bg-gradient-to-r from-transparent via-[#ff9900]/50 to-transparent" />
       
       <div className="container mx-auto px-4 md:px-8">
         <motion.div
@@ -105,7 +105,7 @@ function ProjectNode({
         <motion.div
           className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
           style={{
-            boxShadow: "inset 0 0 30px rgba(189, 0, 255, 0.3)",
+            boxShadow: "inset 0 0 30px rgba(255, 153, 0, 0.3)",
           }}
         />
 
@@ -146,7 +146,7 @@ function ProjectNode({
                 project.status === "DEPLOYED"
                   ? "border-[#00f7ff] text-[#00f7ff] bg-[#00f7ff]/10"
                   : project.status === "BETA"
-                  ? "border-[#bd00ff] text-[#bd00ff] bg-[#bd00ff]/10"
+                  ? "border-[#ff9900] text-[#ff9900] bg-[#ff9900]/10"
                   : project.status === "PRIVATE"
                   ? "border-[#ff0055] text-[#ff0055] bg-[#ff0055]/10"
                   : "border-[#888888] text-[#888888] bg-[#888888]/10"
@@ -181,7 +181,7 @@ function ProjectNode({
             className="text-lg font-sans font-bold tracking-wide transition-all duration-300"
             style={{
               color: isHovered ? "var(--neon-green)" : "#e0e0e0",
-              textShadow: isHovered ? "0 0 10px rgba(189, 0, 255, 0.5)" : "none",
+              textShadow: isHovered ? "0 0 10px rgba(255, 153, 0, 0.5)" : "none",
             }}
           >
             {project.title}

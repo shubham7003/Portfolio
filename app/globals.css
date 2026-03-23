@@ -76,22 +76,22 @@
   --card-foreground: #fafafa;
   --popover: #181a1f;
   --popover-foreground: #fafafa;
-  --primary: #d946ef;
+  --primary: #ff9900;
   --primary-foreground: #0d0f12;
   --secondary: #272a30;
   --secondary-foreground: #fafafa;
   --muted: #272a30;
   --muted-foreground: #a1a1aa;
   --accent: #272a30;
-  --accent-foreground: #d946ef;
+  --accent-foreground: #ff9900;
   --destructive: #7f1d1d;
   --destructive-foreground: #fafafa;
   --border: #272a30;
   --input: #272a30;
-  --ring: #d946ef;
+  --ring: #ff9900;
   
   /* Daniel Stephan dark accent colors */
-  --neon-green: #d946ef;
+  --neon-green: #ff9900;
   --charcoal-bg: #181a1f;
   --charcoal-dark: #0d0f12;
   --void-black: #000000;

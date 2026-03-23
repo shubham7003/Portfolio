@@ -123,10 +123,10 @@ export function SkillsSection() {
           className="mt-16 p-6 border border-[#2a2a2a] bg-[#0a0a0a]/50"
         >
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            <SystemStat label="PROJECTS_DEPLOYED" value="15+" color="#bd00ff" />
+            <SystemStat label="PROJECTS_DEPLOYED" value="15+" color="#ff9900" />
             <SystemStat label="CURRENT_STATUS" value="STUDENT" color="#00f7ff" />
             <SystemStat label="STACK_MASTERY" value="15+" color="#ff0055" />
-            <SystemStat label="COFFEE_CONSUMED" value="∞" color="#bd00ff" />
+            <SystemStat label="COFFEE_CONSUMED" value="∞" color="#ff9900" />
           </div>
         </motion.div>
       </div>
