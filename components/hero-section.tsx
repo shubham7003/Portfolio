@@ -51,9 +51,9 @@ export function HeroSection() {
             {/* Social Links */}
             <div className="flex gap-5 items-center">
               {[
-                { icon: Github, href: "https://github.com", label: "GitHub" },
-                { icon: Twitter, href: "https://twitter.com", label: "Twitter" },
-                { icon: Linkedin, href: "https://linkedin.com", label: "LinkedIn" },
+                { icon: Github, href: "https://github.com/shubham7003", label: "GitHub" },
+                { icon: Twitter, href: "https://twitter.com/_shubham_67", label: "Twitter" },
+                { icon: Linkedin, href: "https://linkedin.com/in/shubham-kumar-dubey-650485295", label: "LinkedIn" },
                 { icon: Mail, href: "mailto:hello@example.com", label: "Email" },
               ].map((social) => (
                 <a

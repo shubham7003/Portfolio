@@ -27,12 +27,12 @@ const projects = [
   },
   {
     id: 3,
-    title: "DSA",
-    description: "Collection of Data Structures and Algorithms implementations",
-    image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=600&h=400&fit=crop",
-    tech: ["Python", "Data Structures", "Algorithms"],
-    status: "DEPLOYED",
-    github: "https://github.com/shubham7003/DSA-Projects",
+    title: "MALREADY",
+    description: "Advanced malware analysis and readiness assessment framework for enterprise security",
+    image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=600&h=400&fit=crop",
+    tech: ["Python", "Malware Analysis", "Docker", "React"],
+    status: "BETA",
+    github: "https://github.com/shubham7003/MalReady",
     live: "#",
   },
 ]
