@@ -4,7 +4,6 @@ import { Orbitron, JetBrains_Mono } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import { ThemeProvider } from '@/components/theme-provider'
 import './globals.css'
-import React from 'react' // Ensure React is imported for JSX
 const _orbitron = Orbitron({ subsets: ["latin"], variable: '--font-orbitron' });
 const _jetbrainsMono = JetBrains_Mono({ subsets: ["latin"], variable: '--font-jetbrains' });
 
