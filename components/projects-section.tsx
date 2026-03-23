@@ -164,12 +164,12 @@ function ProjectNode({
           >
             <motion.div
               animate={{ rotate: isDecrypted ? 180 : 0 }}
-              className="p-3 rounded-full bg-[#0a0a0a]/80 border border-[#bd00ff]"
+              className="p-3 rounded-full bg-[#0a0a0a]/80 border border-neon-green"
             >
               {isDecrypted ? (
                 <Unlock className="w-6 h-6 text-[#00f7ff]" />
               ) : (
-                <Lock className="w-6 h-6 text-[#bd00ff]" />
+                <Lock className="w-6 h-6 text-neon-green" />
               )}
             </motion.div>
           </motion.div>
@@ -180,7 +180,7 @@ function ProjectNode({
           <motion.h3
             className="text-lg font-sans font-bold tracking-wide transition-all duration-300"
             style={{
-              color: isHovered ? "#bd00ff" : "#e0e0e0",
+              color: isHovered ? "var(--neon-green)" : "#e0e0e0",
               textShadow: isHovered ? "0 0 10px rgba(189, 0, 255, 0.5)" : "none",
             }}
           >
@@ -219,7 +219,7 @@ function ProjectNode({
           <div className="flex gap-3 pt-2">
             <a
               href={project.github}
-              className="flex items-center gap-1 text-xs font-mono text-[#888888] hover:text-[#bd00ff] transition-colors"
+              className="flex items-center gap-1 text-xs font-mono text-[#888888] hover:text-neon-green transition-colors"
             >
               <Github className="w-4 h-4" />
               <span>SOURCE</span>
@@ -234,9 +234,8 @@ function ProjectNode({
           </div>
         </div>
 
-        {/* Corner accents */}
-        <div className="absolute top-0 left-0 w-4 h-4 border-l-2 border-t-2 border-[#bd00ff] opacity-50" />
-        <div className="absolute top-0 right-0 w-4 h-4 border-r-2 border-t-2 border-[#bd00ff] opacity-50" />
+        <div className="absolute top-0 left-0 w-4 h-4 border-l-2 border-t-2 border-neon-green opacity-50" />
+        <div className="absolute top-0 right-0 w-4 h-4 border-r-2 border-t-2 border-neon-green opacity-50" />
         <div className="absolute bottom-0 left-0 w-4 h-4 border-l-2 border-b-2 border-[#00f7ff] opacity-50" />
         <div className="absolute bottom-0 right-0 w-4 h-4 border-r-2 border-b-2 border-[#00f7ff] opacity-50" />
       </div>

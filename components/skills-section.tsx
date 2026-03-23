@@ -9,7 +9,7 @@ const skillModules = [
     id: "languages",
     name: "LANGUAGES_CORE",
     icon: Code2,
-    color: "#bd00ff",
+    color: "var(--neon-green)",
     skills: ["C", "C++", "Java", "Python", "JavaScript"],
     level: 95,
     connections: ["web", "mobile"],
@@ -36,7 +36,7 @@ const skillModules = [
     id: "database",
     name: "DATA_&_TOOLS",
     icon: Database,
-    color: "#bd00ff",
+    color: "var(--neon-green)",
     skills: ["MySQL", "AWS", "Docker", "Git", "MongoDB"],
     level: 85,
     connections: ["web", "cloud"],
@@ -93,9 +93,9 @@ export function SkillsSection() {
         >
           <defs>
             <linearGradient id="lineGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%" stopColor="#bd00ff" stopOpacity="0.5" />
+              <stop offset="0%" stopColor="var(--neon-green)" stopOpacity="0.5" />
               <stop offset="50%" stopColor="#00f7ff" stopOpacity="0.8" />
-              <stop offset="100%" stopColor="#bd00ff" stopOpacity="0.5" />
+              <stop offset="100%" stopColor="var(--neon-green)" stopOpacity="0.5" />
             </linearGradient>
           </defs>
         </svg>
@@ -159,7 +159,7 @@ function SkillModule({
       onMouseLeave={() => onHover(null)}
       className={`relative p-6 border-2 transition-all duration-300 cursor-pointer ${
         isActive
-          ? "border-[#bd00ff] bg-[#bd00ff]/5"
+          ? "border-neon-green bg-neon-green/5"
           : isConnected
           ? "border-[#00f7ff] bg-[#00f7ff]/5"
           : "border-[#2a2a2a] bg-[#0a0a0a]"
@@ -224,7 +224,7 @@ function SkillModule({
           {module.skills.map((skill) => (
             <span
               key={skill}
-              className="px-2 py-1 font-mono text-xs border border-[#2a2a2a] bg-[#1a1a1a]/50 text-[#e0e0e0] transition-all duration-200 hover:border-[#bd00ff] hover:text-[#bd00ff]"
+              className="px-2 py-1 font-mono text-xs border border-[#2a2a2a] bg-[#1a1a1a]/50 text-[#e0e0e0] transition-all duration-200 hover:border-neon-green hover:text-neon-green"
             >
               {skill}
             </span>

@@ -107,7 +107,7 @@ export function TestimonialsSection() {
     <section className="relative py-32 px-4 overflow-hidden">
       {/* Glowing orbs background */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#bd00ff]/10 rounded-full blur-[100px] animate-pulse" />
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-neon-green/10 rounded-full blur-[100px] animate-pulse" />
         <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-[#00f7ff]/10 rounded-full blur-[100px] animate-pulse" style={{ animationDelay: "1s" }} />
       </div>
 
@@ -206,9 +206,9 @@ export function TestimonialsSection() {
                   <p className={`text-sm leading-relaxed transition-colors duration-500 ${
                     isDecrypted ? "text-[#e0e0e0]" : "text-[#ff0055]/70"
                   }`}>
-                    <span className="text-[#bd00ff] text-2xl">"</span>
+                    <span className="text-neon-green text-2xl">"</span>
                     <DecryptText text={testimonial.message} isDecrypted={isDecrypted} />
-                    <span className="text-[#bd00ff] text-2xl">"</span>
+                    <span className="text-neon-green text-2xl">"</span>
                   </p>
                 </div>
 
@@ -219,7 +219,7 @@ export function TestimonialsSection() {
                   </span>
                   <span className={`text-xs font-mono px-2 py-1 ${
                     isDecrypted 
-                      ? "text-[#00ff88] bg-[#00ff88]/10" 
+                      ? "text-[#d946ef] bg-[#d946ef]/10" 
                       : "text-[#ff0055] bg-[#ff0055]/10 animate-pulse"
                   }`}>
                     {isDecrypted ? "[DECRYPTED]" : "[CLICK TO DECRYPT]"}
@@ -236,8 +236,8 @@ export function TestimonialsSection() {
               </div>
 
               {/* Corner decorations */}
-              <div className="absolute top-0 left-0 w-4 h-4 border-t-2 border-l-2 border-[#bd00ff]/50" />
-              <div className="absolute bottom-0 right-0 w-4 h-4 border-b-2 border-r-2 border-[#bd00ff]/50" />
+              <div className="absolute top-0 left-0 w-4 h-4 border-t-2 border-l-2 border-neon-green/50" />
+              <div className="absolute bottom-0 right-0 w-4 h-4 border-b-2 border-r-2 border-neon-green/50" />
             </div>
           )
         })}

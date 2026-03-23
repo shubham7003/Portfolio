@@ -13,7 +13,7 @@ export function Footer() {
   return (
     <footer className="relative py-16 border-t border-[#2a2a2a]">
       {/* Top gradient line */}
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#bd00ff]/50 to-transparent" />
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-neon-green/50 to-transparent" />
 
       <div className="container mx-auto px-4 md:px-8">
         <div className="flex flex-col items-center gap-8">
@@ -25,7 +25,7 @@ export function Footer() {
                 href={social.href}
                 whileHover={{ scale: 1.1, y: -2 }}
                 whileTap={{ scale: 0.95 }}
-                className="p-3 border border-[#2a2a2a] bg-[#0a0a0a] text-[#888888] transition-all hover:border-[#bd00ff] hover:text-[#bd00ff] hover:shadow-[0_0_15px_rgba(189,0,255,0.3)]"
+                className="p-3 border border-[#2a2a2a] bg-[#0a0a0a] text-[#888888] transition-all hover:border-neon-green hover:text-neon-green hover:shadow-[0_0_15px_rgba(217,70,239,0.3)]"
                 aria-label={social.label}
               >
                 <social.icon className="w-5 h-5" />
@@ -39,7 +39,7 @@ export function Footer() {
               <span className="text-[#00f7ff]">{">"}</span> CONNECTION_ESTABLISHED
             </p>
             <p>
-              <span className="text-[#bd00ff]">{">"}</span> READY_FOR_COLLABORATION
+              <span className="text-neon-green">{">"}</span> READY_FOR_COLLABORATION
             </p>
           </div>
 
@@ -50,7 +50,7 @@ export function Footer() {
 
           {/* Decorative bottom element */}
           <motion.div
-            className="w-32 h-1 bg-gradient-to-r from-[#bd00ff] via-[#00f7ff] to-[#ff0055]"
+            className="w-32 h-1 bg-gradient-to-r from-neon-green via-[#00f7ff] to-neon-green"
             animate={{
               opacity: [0.5, 1, 0.5],
             }}

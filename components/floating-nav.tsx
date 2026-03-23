@@ -69,19 +69,14 @@ export function FloatingNav() {
       >
         {/* Navigation container */}
         <div 
-          className={`bg-[#0a0a0a]/90 border border-[#2a2a2a] backdrop-blur-sm transition-all duration-300 ${
+          className={`bg-background/90 border border-border backdrop-blur-md rounded-lg shadow-sm transition-all duration-300 overflow-hidden ${
             isExpanded ? "w-48" : "w-12"
           }`}
-          style={{
-            clipPath: "polygon(0 10px, 10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%)"
-          }}
         >
           {/* Header */}
-          <div className="px-3 py-2 border-b border-[#2a2a2a]">
-            <span className={`text-[10px] font-mono text-[#bd00ff] whitespace-nowrap overflow-hidden transition-all duration-300 ${
-              isExpanded ? "opacity-100" : "opacity-0"
-            }`}>
-              NAV_SYSTEM v1.0
+          <div className={`px-3 py-3 border-b border-border transition-all duration-300 ${isExpanded ? "opacity-100" : "opacity-0"}`}>
+            <span className="text-[10px] font-sans font-semibold text-muted-foreground whitespace-nowrap tracking-widest uppercase">
+              Navigation
             </span>
           </div>
 
@@ -94,53 +89,35 @@ export function FloatingNav() {
                 <button
                   key={item.id}
                   onClick={() => scrollToSection(item.id)}
-                  className={`w-full flex items-center gap-3 px-3 py-2 transition-all duration-200 group ${
+                  className={`w-full flex items-center gap-3 px-3 py-2.5 transition-all duration-200 group relative ${
                     isActive 
-                      ? "text-[#00f7ff] bg-[#00f7ff]/10" 
-                      : "text-[#888] hover:text-[#e0e0e0] hover:bg-[#1a1a1a]"
+                      ? "text-vibrant-orange bg-vibrant-orange/10" 
+                      : "text-muted-foreground hover:text-foreground hover:bg-muted/30"
                   }`}
                 >
+                  {/* Indicator Line */}
+                  {isActive && (
+                    <div className="absolute left-0 top-0 bottom-0 w-0.5 bg-gradient-to-b from-vibrant-orange to-vibrant-rose rounded-r-full" />
+                  )}
+
                   {/* Icon */}
-                  <span className={`font-mono text-lg transition-transform duration-200 ${
+                  <span className={`text-sm transition-transform duration-200 ${
                     isActive ? "scale-110" : "group-hover:scale-110"
                   }`}>
                     {item.icon}
                   </span>
 
                   {/* Label */}
-                  <span className={`text-xs font-mono whitespace-nowrap overflow-hidden transition-all duration-300 ${
+                  <span className={`text-xs font-medium whitespace-nowrap overflow-hidden transition-all duration-300 ${
                     isExpanded ? "opacity-100 max-w-full" : "opacity-0 max-w-0"
                   }`}>
                     {item.label}
                   </span>
-
-                  {/* Active indicator */}
-                  {isActive && (
-                    <span className={`ml-auto text-[8px] font-mono transition-all duration-300 ${
-                      isExpanded ? "opacity-100" : "opacity-0"
-                    }`}>
-                      [ACTIVE]
-                    </span>
-                  )}
                 </button>
               )
             })}
           </div>
-
-          {/* Footer */}
-          <div className={`px-3 py-2 border-t border-[#2a2a2a] transition-all duration-300 ${
-            isExpanded ? "opacity-100" : "opacity-0 h-0 py-0 overflow-hidden"
-          }`}>
-            <div className="flex items-center gap-2">
-              <div className="w-2 h-2 rounded-full bg-[#00ff88] animate-pulse" />
-              <span className="text-[10px] font-mono text-[#888]">SYSTEM_ONLINE</span>
-            </div>
-          </div>
         </div>
-
-        {/* Decorative corner */}
-        <div className="absolute -top-1 -left-1 w-3 h-3 border-t border-l border-[#bd00ff]" />
-        <div className="absolute -bottom-1 -right-1 w-3 h-3 border-b border-r border-[#00f7ff]" />
       </div>
     </nav>
   )

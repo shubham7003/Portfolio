@@ -91,8 +91,8 @@ export function StatsCounter() {
     <section className="relative py-24 px-4 overflow-hidden">
       {/* Background effect */}
       <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-gradient-to-r from-[#bd00ff]/5 via-transparent to-[#00f7ff]/5" />
-        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#bd00ff] to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-neon-green/5 via-transparent to-[#00f7ff]/5" />
+        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-neon-green to-transparent" />
         <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#00f7ff] to-transparent" />
       </div>
 
@@ -105,11 +105,11 @@ export function StatsCounter() {
               style={{ animationDelay: `${index * 100}ms` }}
             >
               {/* Glowing border on hover */}
-              <div className="absolute inset-0 border border-[#2a2a2a] group-hover:border-[#bd00ff] transition-colors duration-300">
-                <div className="absolute top-0 left-0 w-2 h-2 border-t border-l border-[#bd00ff] opacity-0 group-hover:opacity-100 transition-opacity" />
+              <div className="absolute inset-0 border border-[#2a2a2a] group-hover:border-neon-green transition-colors duration-300">
+                <div className="absolute top-0 left-0 w-2 h-2 border-t border-l border-neon-green opacity-0 group-hover:opacity-100 transition-opacity" />
                 <div className="absolute top-0 right-0 w-2 h-2 border-t border-r border-[#00f7ff] opacity-0 group-hover:opacity-100 transition-opacity" />
                 <div className="absolute bottom-0 left-0 w-2 h-2 border-b border-l border-[#00f7ff] opacity-0 group-hover:opacity-100 transition-opacity" />
-                <div className="absolute bottom-0 right-0 w-2 h-2 border-b border-r border-[#bd00ff] opacity-0 group-hover:opacity-100 transition-opacity" />
+                <div className="absolute bottom-0 right-0 w-2 h-2 border-b border-r border-neon-green opacity-0 group-hover:opacity-100 transition-opacity" />
               </div>
 
               {/* Value */}
@@ -123,7 +123,7 @@ export function StatsCounter() {
               </div>
 
               {/* Active indicator */}
-              <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-[2px] bg-gradient-to-r from-[#bd00ff] to-[#00f7ff] group-hover:w-full transition-all duration-500" />
+              <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-[2px] bg-gradient-to-r from-neon-green to-[#00f7ff] group-hover:w-full transition-all duration-500" />
             </div>
           ))}
         </div>

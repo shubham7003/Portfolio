@@ -97,18 +97,32 @@ NETWORK_CONNECTIONS // ACTIVE_LINKS
 export function TerminalContact() {
   const [history, setHistory] = useState<Array<{ type: "input" | "output"; content: string }>>([
     { type: "output", content: `
-╔═══════════════════════════════════════════════════════════════╗
-║  SHADOW_TERMINAL v2.0.47 // SECURE CONNECTION ESTABLISHED     ║
-║  ─────────────────────────────────────────────────────────    ║
-║  Welcome, Operative. Type 'help' for available commands.      ║
-║  All communications are encrypted and monitored.              ║
-╚═══════════════════════════════════════════════════════════════╝
+┌───────────────────────────────────────────────────────────────┐
+│  TERMINAL_SYSTEM v2.0 // SECURE CONNECTION ESTABLISHED        │
+│  ─────────────────────────────────────────────────────────    │
+│  Welcome. Type 'help' for available commands.                 │
+│  All communications are encrypted and monitored.              │
+└───────────────────────────────────────────────────────────────┘
 ` }
   ])
   const [input, setInput] = useState("")
   const [isTyping, setIsTyping] = useState(false)
   const terminalRef = useRef<HTMLDivElement>(null)
   const inputRef = useRef<HTMLInputElement>(null)
+  const sectionRef = useRef<HTMLElement>(null)
+
+  useEffect(() => {
+    const handleGlobalKeyDown = (e: KeyboardEvent) => {
+      if (e.altKey && e.key.toLowerCase() === 't') {
+        e.preventDefault()
+        sectionRef.current?.scrollIntoView({ behavior: 'smooth' })
+        setTimeout(() => inputRef.current?.focus(), 500)
+      }
+    }
+
+    window.addEventListener('keydown', handleGlobalKeyDown)
+    return () => window.removeEventListener('keydown', handleGlobalKeyDown)
+  }, [])
 
   useEffect(() => {
     if (terminalRef.current) {
@@ -234,43 +248,39 @@ INFO: Comprehensive collection of efficient algorithms.
   }
 
   return (
-    <section className="relative py-32 px-4">
+    <section ref={sectionRef} className="relative py-32 px-4">
       {/* Section header */}
       <div className="text-center mb-16">
         <div className="inline-block">
-          <span className="text-[#00f7ff] text-sm tracking-[0.3em] font-mono">
+          <span className="text-muted-foreground text-sm tracking-[0.3em] font-mono">
             {'<'} SECURE_CHANNEL {'/>'} 
           </span>
           <h2 className="text-4xl md:text-6xl font-bold mt-4 tracking-tight">
-            <span className="text-[#e0e0e0]">TERMINAL_</span>
-            <span className="text-[#bd00ff] neon-text-purple">ACCESS</span>
+            Terminal <span className="text-neon-green">Access</span>
           </h2>
-          <div className="h-[2px] bg-gradient-to-r from-transparent via-[#bd00ff] to-transparent mt-4" />
+          <div className="h-px bg-border mt-4 w-24 mx-auto" />
         </div>
       </div>
 
       {/* Terminal container */}
       <div className="max-w-4xl mx-auto">
         <div 
-          className="relative bg-[#0a0a0a] border border-[#2a2a2a] rounded-lg overflow-hidden"
-          style={{
-            boxShadow: "0 0 50px rgba(189, 0, 255, 0.1), inset 0 0 50px rgba(0, 0, 0, 0.5)"
-          }}
+          className="relative border border-border rounded-lg shadow-sm overflow-hidden bg-background"
         >
           {/* Terminal header */}
-          <div className="flex items-center gap-2 px-4 py-3 bg-[#111] border-b border-[#2a2a2a]">
-            <div className="w-3 h-3 rounded-full bg-[#ff0055]" />
-            <div className="w-3 h-3 rounded-full bg-[#ffbb00]" />
-            <div className="w-3 h-3 rounded-full bg-[#00ff88]" />
-            <span className="ml-4 text-[#888] text-sm font-mono">
-              shadow@terminal:~$ secure_connect --encrypted
+          <div className="flex items-center gap-2 px-4 py-3 bg-muted/30 border-b border-border">
+            <div className="w-3 h-3 rounded-full bg-muted-foreground/50" />
+            <div className="w-3 h-3 rounded-full bg-muted-foreground/50" />
+            <div className="w-3 h-3 rounded-full bg-neon-green" />
+            <span className="ml-4 text-muted-foreground text-xs font-mono">
+              shubham@server:~$ secure_connect --mode=dark
             </span>
           </div>
 
           {/* Terminal content */}
           <div 
             ref={terminalRef}
-            className="h-[400px] overflow-y-auto p-6 font-mono text-sm"
+            className="h-[400px] overflow-y-auto p-6 font-mono text-sm bg-muted/5"
             onClick={() => inputRef.current?.focus()}
           >
             {history.map((entry, index) => (
@@ -278,8 +288,8 @@ INFO: Comprehensive collection of efficient algorithms.
                 key={index}
                 className={`whitespace-pre-wrap mb-2 ${
                   entry.type === "input" 
-                    ? "text-[#00f7ff]" 
-                    : "text-[#e0e0e0]"
+                    ? "text-neon-green font-medium" 
+                    : "text-foreground"
                 }`}
               >
                 {entry.content}
@@ -287,8 +297,8 @@ INFO: Comprehensive collection of efficient algorithms.
             ))}
             
             {/* Input line */}
-            <div className="flex items-center gap-2 text-[#00f7ff]">
-              <span className="text-[#bd00ff]">{'>'}</span>
+            <div className="flex items-center gap-2 text-neon-green">
+              <span className="text-neon-green font-bold">{'>'}</span>
               <input
                 ref={inputRef}
                 type="text"
@@ -296,22 +306,15 @@ INFO: Comprehensive collection of efficient algorithms.
                 onChange={(e) => setInput(e.target.value)}
                 onKeyDown={handleKeyDown}
                 disabled={isTyping}
-                className="flex-1 bg-transparent outline-none text-[#00f7ff] font-mono"
+                className="flex-1 bg-transparent outline-none text-foreground font-mono"
                 placeholder={isTyping ? "Processing..." : "Enter command..."}
                 autoFocus
               />
-              <span className="animate-pulse text-[#bd00ff]">█</span>
+              <span className="animate-pulse text-neon-green">█</span>
             </div>
           </div>
 
-          {/* Scan line effect */}
-          <div 
-            className="absolute inset-0 pointer-events-none"
-            style={{
-              background: "linear-gradient(transparent 50%, rgba(0, 0, 0, 0.1) 50%)",
-              backgroundSize: "100% 4px"
-            }}
-          />
+
         </div>
 
         {/* Quick commands */}
@@ -321,9 +324,9 @@ INFO: Comprehensive collection of efficient algorithms.
               key={cmd}
               onClick={() => !isTyping && handleCommand(cmd)}
               disabled={isTyping}
-              className="px-4 py-2 bg-[#1a1a1a] border border-[#2a2a2a] text-[#888] hover:text-[#00f7ff] hover:border-[#00f7ff] transition-all duration-300 font-mono text-sm disabled:opacity-50"
+              className="px-4 py-2 bg-muted/20 border border-border rounded-md text-muted-foreground hover:text-neon-green hover:border-neon-green/50 hover:bg-neon-green/10 transition-all duration-300 font-mono text-xs disabled:opacity-50 uppercase tracking-widest"
             >
-              ./{cmd}
+              {cmd}
             </button>
           ))}
         </div>

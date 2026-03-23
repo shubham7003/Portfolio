@@ -14,22 +14,22 @@ interface Experience {
 
 const experiences: Experience[] = [
   {
-    id: "EXP_001",
-    year: "2024 - Present",
-    title: "Student Developer",
-    company: "Lovely Professional University",
-    description: "Pursuing Engineering degree. Specializing in App Development and AI/ML technologies. Leading academic projects and hackathon teams.",
-    techStack: ["Java", "Python", "Data Structures", "AI/ML"],
-    status: "ACTIVE"
-  },
-  {
-    id: "EXP_002", 
+    id: "EXP_001", 
     year: "2025",
     title: "Security Researcher",
     company: "Independent Research",
     description: "Developed a comprehensive Security Vulnerability Detection Framework. Analyzed buffer overflows and system trapdoors.",
     techStack: ["Python", "Network Security", "Kali Linux", "Scripting"],
     status: "COMPLETED"
+  },
+  {
+    id: "EXP_002",
+    year: "2024 - Present",
+    title: "Open Source Contributor",
+    company: "GitHub",
+    description: "Actively contributing to open source repositories and building personal portfolio of projects.",
+    techStack: ["Git", "JavaScript", "HTML/CSS", "Markdown"],
+    status: "ACTIVE"
   },
   {
     id: "EXP_003",
@@ -39,15 +39,6 @@ const experiences: Experience[] = [
     description: "Designed and developed the Zynkly Android application. Implemented modern Android patterns and Kotlin coroutines.",
     techStack: ["Kotlin", "Android SDK", "XML", "Firebase"],
     status: "COMPLETED"
-  },
-  {
-    id: "EXP_004",
-    year: "2024",
-    title: "Open Source Contributor",
-    company: "GitHub",
-    description: "Actively contributing to open source repositories and building personal portfolio of projects.",
-    techStack: ["Git", "JavaScript", "HTML/CSS", "Markdown"],
-    status: "ACTIVE"
   }
 ]
 
@@ -70,7 +61,7 @@ function DataStream({ active }: { active: boolean }) {
       ctx.fillStyle = "rgba(5, 5, 5, 0.05)"
       ctx.fillRect(0, 0, canvas.width, canvas.height)
 
-      ctx.fillStyle = active ? "#bd00ff" : "#1a1a1a"
+      ctx.fillStyle = active ? "var(--neon-green)" : "#1a1a1a"
       ctx.font = `${fontSize}px monospace`
 
       for (let i = 0; i < drops.length; i++) {
@@ -132,7 +123,7 @@ export function ExperienceTimeline() {
         {[...Array(5)].map((_, i) => (
           <div 
             key={i}
-            className="absolute top-0 h-full w-px bg-gradient-to-b from-transparent via-[#bd00ff] to-transparent"
+            className="absolute top-0 h-full w-px bg-gradient-to-b from-transparent via-neon-green to-transparent"
             style={{ left: `${20 + i * 15}%`, animationDelay: `${i * 0.5}s` }}
           />
         ))}
@@ -146,7 +137,7 @@ export function ExperienceTimeline() {
           </span>
           <h2 className="text-4xl md:text-6xl font-bold mt-4 tracking-tight">
             <span className="text-[#e0e0e0]">EXPERIENCE_</span>
-            <span className="text-[#bd00ff] neon-text-purple">ARCHIVE</span>
+            <span className="text-neon-green font-bold">ARCHIVE</span>
           </h2>
           <div className="h-[2px] bg-gradient-to-r from-transparent via-[#ff0055] to-transparent mt-4" />
         </div>
@@ -156,7 +147,7 @@ export function ExperienceTimeline() {
       <div className="max-w-4xl mx-auto relative">
         {/* Central line with data stream */}
         <div className="absolute left-1/2 top-0 bottom-0 w-px -translate-x-1/2">
-          <div className="absolute inset-0 bg-gradient-to-b from-[#bd00ff] via-[#00f7ff] to-[#ff0055]" />
+          <div className="absolute inset-0 bg-gradient-to-b from-neon-green via-neon-green to-[#d946ef]" />
           <DataStream active={hoveredId !== null} />
         </div>
 
@@ -181,8 +172,8 @@ export function ExperienceTimeline() {
                     isHovered 
                       ? "border-[#00f7ff] bg-[#00f7ff] scale-150 shadow-[0_0_20px_#00f7ff]" 
                       : exp.status === "ACTIVE"
-                        ? "border-[#00ff88] bg-[#00ff88]/20 animate-pulse"
-                        : "border-[#bd00ff] bg-[#bd00ff]/20"
+                        ? "border-[#d946ef] bg-[#d946ef]/20 animate-pulse"
+                        : "border-neon-green bg-neon-green/20"
                   }`}
                 >
                   <div className="absolute inset-1 rounded-full bg-[#050505]" />
@@ -210,7 +201,7 @@ export function ExperienceTimeline() {
                   >
                     {/* Year badge */}
                     <div className={`absolute -top-3 ${isLeft ? "left-4" : "right-4"}`}>
-                      <span className="px-3 py-1 bg-[#bd00ff] text-[#050505] text-xs font-bold tracking-wider">
+                      <span className="px-3 py-1 bg-neon-green text-[#050505] text-xs font-bold tracking-wider">
                         {exp.year}
                       </span>
                     </div>
@@ -218,7 +209,7 @@ export function ExperienceTimeline() {
                     {/* Status indicator */}
                     <div className={`absolute top-4 ${isLeft ? "right-8" : "left-8"}`}>
                       <span className={`text-xs font-mono ${
-                        exp.status === "ACTIVE" ? "text-[#00ff88]" : 
+                        exp.status === "ACTIVE" ? "text-[#d946ef]" : 
                         exp.status === "CLASSIFIED" ? "text-[#ff0055]" : "text-[#888]"
                       }`}>
                         [{exp.status}]
@@ -236,7 +227,7 @@ export function ExperienceTimeline() {
                         {exp.techStack.map((tech) => (
                           <span 
                             key={tech}
-                            className="px-2 py-1 bg-[#1a1a1a] border border-[#2a2a2a] text-[#bd00ff] text-xs font-mono"
+                            className="px-2 py-1 bg-[#1a1a1a] border border-[#2a2a2a] text-neon-green text-xs font-mono"
                           >
                             {tech}
                           </span>
@@ -246,7 +237,7 @@ export function ExperienceTimeline() {
 
                     {/* Decorative corner */}
                     <div className={`absolute bottom-0 ${isLeft ? "right-0" : "left-0"} w-8 h-8`}>
-                      <div className={`absolute ${isLeft ? "right-2" : "left-2"} bottom-2 w-4 h-4 border-b-2 border-r-2 border-[#bd00ff]/30`} />
+                      <div className={`absolute ${isLeft ? "right-2" : "left-2"} bottom-2 w-4 h-4 border-b-2 border-r-2 border-neon-green/30`} />
                     </div>
                   </div>
 

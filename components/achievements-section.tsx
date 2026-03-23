@@ -105,7 +105,7 @@ const achievements: Achievement[] = [
 const rarityColors: Record<string, { border: string; text: string; glow: string; bg: string }> = {
   COMMON: { border: "#888", text: "#888", glow: "rgba(136,136,136,0.3)", bg: "rgba(136,136,136,0.1)" },
   RARE: { border: "#00f7ff", text: "#00f7ff", glow: "rgba(0,247,255,0.3)", bg: "rgba(0,247,255,0.1)" },
-  LEGENDARY: { border: "#bd00ff", text: "#bd00ff", glow: "rgba(189,0,255,0.3)", bg: "rgba(189,0,255,0.1)" },
+  LEGENDARY: { border: "var(--neon-green)", text: "var(--neon-green)", glow: "rgba(217,70,239,0.3)", bg: "rgba(217,70,239,0.1)" },
   MYTHIC: { border: "#ff0055", text: "#ff0055", glow: "rgba(255,0,85,0.3)", bg: "rgba(255,0,85,0.1)" }
 }
 
@@ -121,14 +121,14 @@ export function AchievementsSection() {
       {/* Section header */}
       <div className="text-center mb-16">
         <div className="inline-block">
-          <span className="text-[#bd00ff] text-sm tracking-[0.3em] font-mono">
+          <span className="text-neon-green text-sm tracking-[0.3em] font-mono">
             {'<'} SYSTEM_LOGS {'/>'} 
           </span>
           <h2 className="text-4xl md:text-6xl font-bold mt-4 tracking-tight">
             <span className="text-[#e0e0e0]">ACHIEVEMENT_</span>
             <span className="text-[#00f7ff] neon-text-blue">UNLOCKED</span>
           </h2>
-          <div className="h-[2px] bg-gradient-to-r from-transparent via-[#bd00ff] to-transparent mt-4" />
+          <div className="h-[2px] bg-gradient-to-r from-transparent via-neon-green to-transparent mt-4" />
         </div>
 
         {/* Progress bar */}
@@ -139,7 +139,7 @@ export function AchievementsSection() {
           </div>
           <div className="h-2 bg-[#1a1a1a] rounded-full overflow-hidden">
             <div 
-              className="h-full bg-gradient-to-r from-[#bd00ff] via-[#00f7ff] to-[#ff0055] transition-all duration-1000"
+              className="h-full bg-gradient-to-r from-neon-green via-[#00f7ff] to-neon-green transition-all duration-1000"
               style={{ width: `${(totalUnlocked / totalAchievements) * 100}%` }}
             />
           </div>

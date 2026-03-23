@@ -42,7 +42,7 @@ export function SystemStatusBar() {
           <StatusItem
             label="NET_STATUS"
             value="CONNECTED"
-            color="text-[#bd00ff]"
+            color="text-vibrant-orange"
             pulse
           />
           <div className="hidden md:block h-4 w-px bg-[#2a2a2a]" />
@@ -62,13 +62,13 @@ export function SystemStatusBar() {
           onHoverEnd={() => setIsHovered(false)}
           whileHover={{ scale: 1.02 }}
           whileTap={{ scale: 0.98 }}
-          className="relative flex items-center gap-2 px-4 py-2 border border-[#bd00ff] bg-transparent text-[#bd00ff] font-mono text-xs md:text-sm uppercase tracking-wider transition-all hover:bg-[#bd00ff]/10"
+          className="relative flex items-center gap-2 px-4 py-2 border border-vibrant-orange bg-transparent text-vibrant-orange font-mono text-xs md:text-sm uppercase tracking-wider transition-all hover:bg-vibrant-orange/10"
         >
           {isHovered && (
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              className="absolute inset-0 bg-[#bd00ff]/5"
+              className="absolute inset-0 bg-vibrant-orange/5"
               style={{
                 clipPath: `inset(0 ${Math.random() * 100}% 0 0)`,
               }}
