@@ -84,7 +84,7 @@ export function HeroSection() {
               </span>
             </div>
             <div className="flex items-center gap-4">
-              <span className="text-4xl sm:text-5xl font-mono text-foreground">5+</span>
+              <span className="text-4xl sm:text-5xl font-mono text-foreground">15+</span>
               <span className="text-xs font-mono text-muted-foreground uppercase leading-tight">
                 Projects<br />Completed
               </span>

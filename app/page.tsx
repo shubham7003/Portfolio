@@ -5,6 +5,7 @@ import { ProjectsSection } from "@/components/projects-section"
 import { SkillsSection } from "@/components/skills-section"
 import { ExperienceTimeline } from "@/components/experience-timeline"
 import { AchievementsSection } from "@/components/achievements-section"
+import { CertificatesSection } from "@/components/certificates-section"
 import { TestimonialsSection } from "@/components/testimonials-section"
 import { TerminalContact } from "@/components/terminal-contact"
 import { Footer } from "@/components/footer"
@@ -33,6 +34,10 @@ export default function Home() {
       
       <section id="experience">
         <ExperienceTimeline />
+      </section>
+      
+      <section id="certificates">
+        <CertificatesSection />
       </section>
       
       <section id="achievements">

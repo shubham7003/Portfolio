@@ -10,12 +10,12 @@ interface Stat {
 }
 
 const stats: Stat[] = [
-  { label: "LINES_OF_CODE", value: 2847563, suffix: "", prefix: "" },
-  { label: "COMMITS_DEPLOYED", value: 4782, suffix: "+", prefix: "" },
-  { label: "BUGS_ELIMINATED", value: 99.7, suffix: "%", prefix: "" },
-  { label: "COFFEE_CONSUMED", value: 8472, suffix: "L", prefix: "" },
+  { label: "LINES_OF_CODE", value: 14563, suffix: "", prefix: "" },
+  { label: "COMMITS_DEPLOYED", value: 482, suffix: "+", prefix: "" },
+  { label: "BUGS_ELIMINATED", value: 99.9, suffix: "%", prefix: "" },
+  { label: "COFFEE_CONSUMED", value: 472, suffix: "L", prefix: "" },
   { label: "UPTIME_MAINTAINED", value: 99.99, suffix: "%", prefix: "" },
-  { label: "PROJECTS_SHIPPED", value: 47, suffix: "", prefix: "" }
+  { label: "PROJECTS_SHIPPED", value: 19, suffix: "", prefix: "" }
 ]
 
 function AnimatedNumber({ value, suffix, prefix }: { value: number; suffix: string; prefix?: string }) {
