@@ -78,15 +78,15 @@ export function HeroSection() {
             className="flex items-center gap-12 pt-16 md:pt-24"
           >
             <div className="flex items-center gap-4">
-              <span className="text-4xl sm:text-5xl font-mono text-foreground">12</span>
+              <span className="text-4xl sm:text-5xl font-mono text-foreground">3</span>
               <span className="text-xs font-mono text-muted-foreground uppercase leading-tight">
                 Years<br />Experience
               </span>
             </div>
             <div className="flex items-center gap-4">
-              <span className="text-4xl sm:text-5xl font-mono text-foreground">165</span>
+              <span className="text-4xl sm:text-5xl font-mono text-foreground">5+</span>
               <span className="text-xs font-mono text-muted-foreground uppercase leading-tight">
-                Projects Completed<br />On 18 Countries
+                Projects<br />Completed
               </span>
             </div>
           </motion.div>
